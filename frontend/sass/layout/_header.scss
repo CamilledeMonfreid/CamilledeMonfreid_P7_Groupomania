@@ -1,0 +1,11 @@
+/* Design du header */
+@use '../abstracts/' as *;
+
+header{
+    background-color: $primaire;
+
+    img{
+        height: 75px;
+        margin: 30px 70px;
+    }
+}

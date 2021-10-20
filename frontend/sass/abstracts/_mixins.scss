@@ -1,0 +1,11 @@
+/* Mixins */
+@use './variables' as *;
+
+@mixin backgroundtitle($color:$secondaire){
+    background-color: $color;
+    height: 80%;
+    position: absolute;
+    top:15px;
+    width: 100%;
+    z-index:auto;
+}

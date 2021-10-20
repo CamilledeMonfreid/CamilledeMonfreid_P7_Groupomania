@@ -1,0 +1,17 @@
+/* Design des boutons du site */
+@use '../abstracts/' as *;
+
+.button{
+    background-color: $primaire;
+    border: none;
+    box-shadow: 4px 4px 4px 0px #C1C1C1;
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    &:hover{
+        background-color: lighten($primaire, 20%);
+    }
+}

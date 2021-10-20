@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+body{
+    font-family: 'Mukta Vaani', sans-serif;
+}
+
+.title{
+    position: relative;
+    width: fit-content;
+    
+    h2{
+        color: $primaire;
+        font-family: 'Open sans', sans-serif;
+        font-size: 40px;
+        font-weight: 800;
+        position: relative;
+        z-index: 3;
+        left:10px;
+    }
+    .background{
+        @include backgroundtitle($color:$secondaire);
+    }
+}

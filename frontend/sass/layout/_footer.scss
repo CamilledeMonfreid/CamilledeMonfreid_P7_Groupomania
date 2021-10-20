@@ -1,0 +1,29 @@
+/* Design footer */
+@use '../abstracts/' as *;
+
+footer{
+    align-items: center;
+    background-color: $primaire;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    
+    a{
+        font-size: 24px;
+        text-decoration: none;
+
+        &:hover{
+            color: $tertiaire;
+        }
+    }
+
+    p{
+        font-size: 20px;
+        font-weight: 300;
+        margin-top: 15px;
+    }
+
+    a,p{
+        color: white;
+    }
+}
