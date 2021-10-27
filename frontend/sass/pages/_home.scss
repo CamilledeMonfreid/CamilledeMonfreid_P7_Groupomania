@@ -78,6 +78,10 @@ main{
     }
 }
 
+#post__message{
+    display: flex;
+    flex-direction: column-reverse;
+}
 .post{
     margin-top: 60px;
 
