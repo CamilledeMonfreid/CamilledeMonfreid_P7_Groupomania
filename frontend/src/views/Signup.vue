@@ -1,33 +1,31 @@
 <template>
-    <main class="inscription">
-            <div class="title">
-                <h2>Inscription</h2>
-                <div class="background"></div>
-            </div>
-            <p>*Champs obligatoires</p>
+  <main class="inscription">
+    <div class="title">
+      <h2>Inscription</h2>
+      <div class="background"></div>
+    </div>
+    <p>*Champs obligatoires</p>
 
-            <form class="connexion">
-                <label for="nom">Nom*</label>
-                <input type="text" id="nom" name="nom" minlength="2" class='input' required v-model="lastname" >
+    <form class="connexion">
+      <label for="nom">Nom*</label>
+      <input type="text" id="nom" name="nom" minlength="2" class='input' required v-model="lastname" >
 
-                <label for="prenom">Prénom*</label>
-                <input type="text" id="prenom" name="prenom" minlength="2"   class='input' required v-model="firstname">
+      <label for="prenom">Prénom*</label>
+      <input type="text" id="prenom" name="prenom" minlength="2"   class='input' required v-model="firstname">
 
-                <label for="poste">Poste occupé</label>
-                <input type="text" id="poste" name="poste" minlength="2" class='input'  v-model="poste">
+      <label for="poste">Poste occupé</label>
+      <input type="text" id="poste" name="poste" minlength="2" class='input'  v-model="poste">
 
+      <label for="mail">E-mail*</label>
+      <input type="email" id="mail" name="mail" required minlength="2"  class='input'  v-model="email">
 
-                <label for="mail">E-mail*</label>
-                <input type="email" id="mail" name="mail" required minlength="2"  class='input'  v-model="email">
+      <label for="password">Mot de passe*</label>
+      <input type="password" id="password" name="password" required minlength="2"   class='input'  v-model="password">
 
-                <label for="password">Mot de passe*</label>
-                <input type="password" id="password" name="password" required minlength="2"   class='input'  v-model="password">
-
-                <router-link to="/" class="button"  @click.native="postUser()">S'inscrire</router-link>
-                <router-view /> 
-                
-            </form>
-    </main>
+      <router-link to="/" class="button"  @click.native="postUser()">S'inscrire</router-link>
+      <router-view />           
+    </form>
+  </main>
 </template>
 
 <script>
@@ -44,7 +42,6 @@ export default {
       errors: []
     }
   },
-
   methods: {
     // Pushes posts to the server when called.
     postUser() {
@@ -54,7 +51,6 @@ export default {
             poste: this.poste,
             email: this.email,
             password: this.password
-
       })
       .then(response => {console.log(response.data)})
       .catch(e => {
@@ -64,5 +60,6 @@ export default {
     }
   }
 }
-
 </script>
+
+

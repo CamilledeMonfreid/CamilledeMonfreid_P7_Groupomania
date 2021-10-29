@@ -1,29 +1,29 @@
 <template>
   <div  v-if="connected">
     <main class="profil">
-            <div class="title">
-                <h2>Profil</h2>
-                <div class="background"></div>
-            </div>
+      <div class="title">
+        <h2>Profil</h2>
+        <div class="background"></div>
+      </div>
 
-            <div class="profil__nom">
-                <p class="profil__title">Nom</p>
-                <p>{{ nom }} </p>
-            </div>
+      <div class="profil__nom">
+        <p class="profil__title">Nom</p>
+        <p>{{ nom }} </p>
+      </div>
 
-            <div class="profil__prenom">
-                <p class="profil__title">Prénom</p>
-                <p>{{ prenom }}</p>
-            </div>
+      <div class="profil__prenom">
+        <p class="profil__title">Prénom</p>
+        <p>{{ prenom }}</p>
+      </div>
 
-            <div class="profil__mail">
-                <p class="profil__title">E-mail</p>
-                <p>{{ email }}</p>
-            </div>
+      <div class="profil__mail">
+        <p class="profil__title">E-mail</p>
+        <p>{{ email }}</p>
+      </div>
 
-            <a href="#" class="button" @click="deconnecter()">Se déconnecter</a>
-            <a href="#" class="button supprimer" @click="supprimerCompte()">Supprimer mon compte</a>
-        </main>
+      <a href="#" class="button" @click="deconnecter()">Se déconnecter</a>
+      <a href="#" class="button supprimer" @click="supprimerCompte()">Supprimer mon compte</a>
+    </main>
   </div>
 </template>
 
@@ -47,9 +47,10 @@ export default {
   mounted(){
     
       axios.get(`http://localhost:3000/users/`, {
-    headers: {
-        'Authorization': 'bearer ' + localStorage.getItem('token')
-            }})
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
       .then(response => {
         const users = response.data
         const sessionStorage = JSON.parse(localStorage.getItem("session"))
@@ -63,9 +64,6 @@ export default {
         }
       })
       .catch(e => {this.errors.push(e)})
-
-      
-    
   },
   methods: {
     isConnected(){
@@ -78,24 +76,20 @@ export default {
         console.log('user not connected');
       }
     },
-
     deconnecter(){
       localStorage.removeItem("session")
-
       location.reload()
-
     },
-
     supprimerCompte(){
       const sessionStorage = JSON.parse(localStorage.getItem("session"))
       axios.delete(`http://localhost:3000/users/` + sessionStorage.userId)
-      .then(response => {console.log(response.data)
+      .then(response => {
+        console.log(response.data)
         localStorage.removeItem("session")
         location.reload()
       })
       .catch(e => {this.errors.push(e)})
     }
-    
   }
 }
 </script>

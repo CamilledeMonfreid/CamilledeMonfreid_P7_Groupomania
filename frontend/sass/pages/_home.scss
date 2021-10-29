@@ -109,9 +109,10 @@ main{
             font-size: 20px;
         }
 
-        .likeicon, .cross{
+        .likeicon, .closeicon{
             cursor: pointer;
             height: 20px;
+            padding-left: 5px;
 
         }
         .cross:hover{

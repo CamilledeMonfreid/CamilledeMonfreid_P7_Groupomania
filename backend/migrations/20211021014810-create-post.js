@@ -23,6 +23,12 @@ module.exports = {
       image: {
         type: Sequelize.STRING
       },
+      likes:{
+        type: Sequelize.JSON
+      },
+      numberOfLikes:{
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

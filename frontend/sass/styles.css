@@ -235,9 +235,10 @@ main {
 .post__message p {
   font-size: 20px;
 }
-.post__message .likeicon, .post__message .cross {
+.post__message .likeicon, .post__message .closeicon {
   cursor: pointer;
   height: 20px;
+  padding-left: 5px;
 }
 .post__message .cross:hover {
   filter: invert(22%) sepia(88%) saturate(3321%) hue-rotate(359deg) brightness(102%) contrast(98%);

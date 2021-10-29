@@ -11,7 +11,8 @@ exports.signup = (req, res, next) => {
             prenom:req.body.prenom,
             poste:req.body.poste,
             email:req.body.email,
-            password:hash
+            password:hash,
+            admin: req.body.admin
         })
         user.save()
             .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
@@ -47,6 +48,7 @@ exports.login = (req, res, next) => {
       .catch(error => res.status(500).json({ error }));
 };
 
+//Récuperer tous les users
 exports.getAllUser = (req, res, next) => {
   User.findAll().then(
     (users) => {
@@ -75,7 +77,6 @@ exports.getUser = (req, res, next) => {
       });
     }
   );
-
 }
 
 //Supprimer un user

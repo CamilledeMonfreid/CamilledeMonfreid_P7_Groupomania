@@ -26,7 +26,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     image: {
       type: DataTypes.STRING,
-    }
+    },
+    likes:{
+      type: DataTypes.JSON,
+    },
+    numberOfLikes:{
+      type: DataTypes.STRING,
+
+    },
     }, {
     sequelize,
     tableName:'posts',

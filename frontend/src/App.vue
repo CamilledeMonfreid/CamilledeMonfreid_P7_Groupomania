@@ -1,7 +1,7 @@
 <template>
   <div id="app">
    <header>
-            <img src="images/icon-left-font-monochrome-white.svg" alt="logo">
+      <img src="images/icon-left-font-monochrome-white.svg" alt="logo">
     </header>
 
     <Login v-if="!connected"/>
@@ -11,10 +11,11 @@
       <router-link to="/profil">Profil</router-link> 
     </div>
     <router-view />
+
     <footer>
-            <a href="#">Mentions légales</a>
-            <p>© 2021 CONNECT-E</p>
-        </footer>
+      <a href="#">Mentions légales</a>
+      <p>© 2021 CONNECT-E</p>
+    </footer>
   </div>
 </template>
 
@@ -26,18 +27,17 @@
 <script>
 import Login from './components/Login.vue'
 
-
 export default {
 	name: 'App',
 	components: {
 		Login
 	},
-   data() {
+  data() {
     return{
       connected: true
     };
   },
-   created(){
+  created(){
     this.isConnected()
   },
   methods: {
