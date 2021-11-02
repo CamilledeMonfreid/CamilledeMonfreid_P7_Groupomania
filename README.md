@@ -1,5 +1,8 @@
 # Projet Openclassrooms N°7 : Groupomania
 ## Visualiser le site
+
+Vous pouvez visualiser la maquette réalisée par mes soins sur Figma : https://www.figma.com/file/vCJWOP51sfrgHFM73xSFSe/Groupomania  
+
 ### Prérequis
 Vous aurez besoin de Node et d'installer `npm` sur votre machine. 
 
